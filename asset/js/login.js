@@ -1,6 +1,6 @@
 const form = document.getElementById("form-login");
 
-const authLogin = "https://st2lww-8888.csb.app/fajry/data";
+const authLogin = "https://st2lww-8888.csb.app/auth/login";
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -20,6 +20,6 @@ form.addEventListener("submit", async (event) => {
     window.alert(processLogin.message);
     window.location = "index.html";
   } else {
-    window.alert("Silakan input data yang sesuai");
+    window.alert(processLogin.message);
   }
 });

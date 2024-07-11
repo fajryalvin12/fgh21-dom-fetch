@@ -5,7 +5,7 @@ const endpoint = "https://st2lww-8888.csb.app/fajry/data";
 async function insertTable() {
   const data = await fetch(endpoint);
   const dataTable = await data.json();
-  tableBody.innerHTML = "";
+  tableBody.textContent = "";
 
   dataTable.results.forEach((e) => {
     const tableRow = document.createElement("tr");
@@ -14,19 +14,19 @@ async function insertTable() {
     const tableGender = document.createElement("td");
     const tableSmoke = document.createElement("td");
     const tableVariant = document.createElement("td");
-    tableName.innerHTML = e.name;
-    tableAge.innerHTML = e.age;
-    tableGender.innerHTML = e.gender;
-    tableVariant.innerHTML = e.cigarVariant.join("; ");
+    tableName.textContent = e.name;
+    tableAge.textContent = e.age;
+    tableGender.textContent = e.gender;
+    tableVariant.textContent = e.cigarVariant.join("; ");
 
     tableRow.appendChild(tableName);
     tableRow.appendChild(tableAge);
     tableRow.appendChild(tableGender);
     if (e.isSmoker) {
-      tableSmoke.innerHTML = "Ya";
+      tableSmoke.textContent = "Ya";
       tableRow.appendChild(tableSmoke);
     } else {
-      tableSmoke.innerHTML = "Tidak";
+      tableSmoke.textContent = "Tidak";
       tableRow.appendChild(tableSmoke);
     }
     tableRow.appendChild(tableVariant);
